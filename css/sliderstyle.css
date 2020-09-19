@@ -1,0 +1,204 @@
+*{
+    margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+html{
+	overflow:hidden;
+	width:100vw;
+}
+body{
+	background-color:gray;
+	font-family: "Lucida Sans Unicode",sans-serif;
+	width:100%;
+	height:100%;
+	vertical-align:middle;
+	
+}
+/*---------------------------Main Container-----------------------*/
+.main-container{
+	background-color:#000;
+	display:flex;
+	flex-direction:column;
+	width:70%;
+	height:90%;
+	align-items:center;
+	box-shadow: 1px 1px 10px red, 1px 8px 10px gray;
+	border-radius: 10px;
+	position:absolute;
+	left:15%;
+	right:15%;
+	top:5%;
+	bottom:5%;
+}
+
+
+/*----------Header Section------------*/
+.main-header{
+	text-align:center;
+	background-color:#000;
+	width:100%;
+	height:15%;
+}
+.header-text{
+	font-size:4.0 rem;
+	font-weight:bolder;
+	letter-spacing:20px;
+	color:#000;
+	text-shadow:1px 1px 10px red, 1px 8px 10px red, 4px 0px 10px red, 0px 4px 5px red, 0px -4px 5px red;
+	text-align:center;
+	margin:2% 0;
+}
+/*---------Slider Body--------------*/
+.slider-body{
+	border-top: 2px solid #8B814C;
+	border-bottom: 2px solid #8B814C;
+	height:82%;
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding: 3px 0px;
+}
+/*--Slider Image--*/
+.first-image{
+	height:100%;
+	width:100%;
+	border:5px ridge white;
+	background-color:#000;
+}
+
+/*--Next and Previous Button--*/
+.nav-btn{
+	width:5%;
+	height:8%;
+	position:absolute;
+	box-shadow:2px 2px 8px white, -2px -2px 10px white;
+}
+.next{
+	right:2%;
+	top:50%;
+}
+.back{
+	visibility:visible;
+	left:2%;
+	top:50%;
+}
+
+
+/*Animations applied on the Navigation Buttons*/
+@keyframes next{
+	from{
+		transform:translate(0px,0px);
+	}
+	to{
+		transform:translate(5%,0%);
+	}
+}
+@keyframes back{
+	from{
+		transform:translate(0px,0px);
+	}
+	to{
+		transform:translate(-5%,0%);
+	}
+}
+
+.next:active{
+	animation:next 0.2s linear normal;
+	}
+.back:active{
+	animation:back 0.2s linear normal;
+}
+
+
+/*--Slideshow animations to be applied on the images later--*/
+
+/*@keyframes slide{
+	0%{
+		transform:trans(0px,0px);
+	}
+	50%{
+		transform:scaleY(0.1);
+	}
+	75%{
+		transform:translate(20%,0%);
+	}
+	85%{
+	}
+}
+@keyframes slide-next{
+	0%{
+		transform:trans(0px,0px);
+	}
+	50%{
+		transform:scaleY(0.1);
+	}
+	75%{
+		transform:translate(20%,0%);
+	}
+	85%{
+	}
+}
+*/
+
+/*-----------------------------Medai Queries---------------------------*/
+
+
+/*-------For iPads and Tablets--------*/
+@media screen and (max-width:768px){
+	.main-container{
+		width:97vw;
+		height:75vh;
+		position:relative;
+		left:0px;
+		right:0px;
+		margin:5vh auto;
+		overflow-x:hidden;
+	}
+	.header-text{
+		letter-spacing:10px;
+		font-size:3.0rem;
+		margin-top:0%;
+	}
+	.main-header{
+		padding-left:2px;
+	}
+	html{
+		overflow-x:scroll;
+		overflow-y:hidden;
+	}
+	body{
+		vertical-align:middle;
+	}
+	
+}
+
+/*---------For mobile devices-------------*/
+@media screen and (max-width:480px){
+	.header-text{
+		font-size:1.8rem;
+		letter-spacing:4px;
+		margin-top:2vh;
+		margin-bottom:2vh;
+	}
+}
+/*------For Desktops and smaller screens in landscape orientation------*/
+@media screen and (max-width:1200px) and (orientation:landscape){
+	.main-container{
+		width:40vw;
+		height:80vh;
+		margin:10vh auto;
+	}
+	.header-text{
+		font-size:1.2rem;
+		letter-spacing:5px;
+		margin-top:2vh;
+		margin-bottom:2vh;
+	}
+	.nav-btn{
+		width:10%;
+		height:12%;
+	}
+	
+}
