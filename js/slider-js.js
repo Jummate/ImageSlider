@@ -1,10 +1,6 @@
 
-//---------------images in the slideshow-------------------
-
-const imageFolder = ["oranmiyan-staff","capturing-zebra","cheetah","cream","erin-ijesha","green-earth",
-										"jungle","nivea","olumo-rock","third-mainland-bridge","tree","tree-on-hand"];
 										
-let image = document.querySelector(".first-image");
+let images = document.querySelectorAll(".first-image");
 let next = document.querySelector(".next");
 let back = document.querySelector(".back");
 let count = 0
@@ -12,17 +8,17 @@ let count = 0
 //------------Hide and display the Navigation buttons--------------
 
 next.addEventListener("click",function(){
-	//image.style.animation="slide 0.3s linear normal";
-	if(count < imageFolder.length){
+	images[0].style.animation="slide 0.2s linear normal";
+	if(count < images.length){
 		count++;
 		setTimeout(()=>{
-	image.src="img/"+imageFolder[count]+".jpg";
-	image.alt=imageFolder[count];
+		images[0].src = images[count].src;
+		images[0].style.animation = "slide-next 0.2s linear 0s reverse";
 	}, 100);
-	//image.style.animation = "slide-next 0.3s linear 0s reverse";
+	
 	back.style.visibility ="visible";
 	}
-	if(count == imageFolder.length-1)
+	if(count == images.length-1)
 	{
 		next.style.visibility ="hidden";
 	}
@@ -30,11 +26,16 @@ next.addEventListener("click",function(){
 	});
 back.addEventListener("click",function(){
 	//image.style.animation="slide 0.3s linear normal";
-	if(count > 0){
+	if(count >= 1){
 		count--;
 		setTimeout(()=>{
-	image.src="img/"+imageFolder[count]+".jpg";
-	image.alt=imageFolder[count];
+			if(count == 0){
+			images[0].src = "img/oranmiyan-staff.jpg";
+		}
+		else{
+			images[0].src = images[count].src;
+		}
+		
 	}, 100);
 	//image.style.animation = "slide-next 0.3s linear 0s reverse";
 	next.style.visibility ="visible";

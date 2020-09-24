@@ -114,7 +114,7 @@ body{
 
 /*--Slideshow animations to be applied on the images later--*/
 
-/*@keyframes slide{
+@keyframes slide{
 	0%{
 		transform:trans(0px,0px);
 	}
@@ -140,7 +140,7 @@ body{
 	85%{
 	}
 }
-*/
+
 
 /*-----------------------------Medai Queries---------------------------*/
 
@@ -187,8 +187,9 @@ body{
 @media screen and (max-width:1200px) and (orientation:landscape){
 	.main-container{
 		width:40vw;
-		height:80vh;
-		margin:10vh auto;
+		height:100vh;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	.header-text{
 		font-size:1.2rem;
